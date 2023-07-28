@@ -11,21 +11,32 @@ class NavigationBarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var viewModel = Get.put(NavigationBarScreenViewModel());
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Test App'),
-        actions: [
-          IconButton(
-              onPressed: () async=> await getIt<AuthService>().logOut(),
-              icon: const Icon(
-                Icons.logout_outlined,
-                color: Colors.white,
-              ))
-        ],
-      ),
-      body: Obx(() => viewModel.body),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
+    return Obx(
+      () => Scaffold(
+        appBar: AppBar(
+          title: const Text('Test App'),
+          actions: [
+            IconButton(
+                onPressed: () async => await getIt<AuthService>().logOut(),
+                icon: const Icon(
+                  Icons.logout_outlined,
+                  color: Colors.white,
+                ))
+          ],
+        ),
+
+        /// we will use [IndexedStack] because when user navigate to other page and came back, we don't want to request again for users.
+        body: IndexedStack(
+          index: viewModel.currentScreen.value,
+          children: viewModel.screens,
+        ),
+        floatingActionButton: viewModel.currentScreen.value == 1
+            ? FloatingActionButton(
+                onPressed: () => {},
+                child: const Icon(Icons.add),
+              )
+            : null,
+        bottomNavigationBar: BottomNavigationBar(
           currentIndex: viewModel.currentScreen.value,
           onTap: (value) => viewModel.changeScreen(index: value),
           items: const <BottomNavigationBarItem>[

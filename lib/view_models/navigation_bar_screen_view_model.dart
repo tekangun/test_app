@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../views/todo_list_screen/todo_list_screen.dart';
@@ -12,7 +11,6 @@ class NavigationBarScreenViewModel extends GetxController {
     const TodoListScreen(),
   ];
 
-  Widget get body => screens[currentScreen.value];
 
   void changeScreen({required int index}) {
     currentScreen.value = index;
