@@ -16,6 +16,7 @@ class SecureStorage {
     await getStorage.write(key: SecureStorageKeys.userToken, value: token);
   }
 
-  Future<String?> getUserToken() async  => await getStorage.read(key: SecureStorageKeys.userToken);
+  Future<String?> getUserToken() async => await getStorage.read(key: SecureStorageKeys.userToken);
 
+  Future<void> removeUserToken() async => await getStorage.delete(key: SecureStorageKeys.userToken);
 }
