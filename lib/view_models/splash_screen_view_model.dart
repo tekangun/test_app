@@ -10,10 +10,10 @@ class SplashScreenViewModel {
     await Future.delayed(const Duration(seconds: 1));
     if (userToken != null) {
       // user available, go to main screen
-      Get.to(() => const NavigationBarScreen());
+      Get.offAll(() => const NavigationBarScreen());
     } else {
       // user not avaiable, go to login screen
-      Get.to(() => const LoginScreen());
+      Get.offAll(() => const LoginScreen());
     }
   }
 }
