@@ -8,8 +8,8 @@ import '../views/user_list_screen/user_list_screen.dart';
 class NavigationBarScreenViewModel extends GetxController {
   var currentScreen = 0.obs;
   var screens = [
-     UserListScreen(),
-     TodoListScreen(),
+    const UserListScreen(),
+    const TodoListScreen(),
   ];
 
   Widget get body => screens[currentScreen.value];

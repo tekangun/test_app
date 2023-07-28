@@ -4,14 +4,16 @@ import 'package:get/get.dart';
 import 'package:test_app/core/constants/request_constants.dart';
 import 'package:test_app/core/init/get_it_init.dart';
 import 'package:test_app/models/login_response_model.dart';
+import 'package:test_app/services/local_services/dialog_service.dart';
 import 'package:test_app/services/local_services/secure_storage.dart';
-import 'package:test_app/services/network_services/api_services.dart';
+import 'package:test_app/services/network_services/api_service.dart';
 import 'package:test_app/view_models/login_screen_view_model.dart';
 import 'package:test_app/views/login_screen/login_screen.dart';
 
 class AuthService {
   Future<LoginResponseModel?> login({required LoginScreenViewModel loginScreenViewModel}) async {
     try {
+      getIt<DialogService>().showFullScreenLoadingDialog();
       var response = await getIt<ApiService>()
           .request(requestModel: getIt<RequestConstants>().getLoginRequest(loginScreenViewModel: loginScreenViewModel));
       var loginResponse = LoginResponseModel.fromJson(response);
@@ -20,6 +22,7 @@ class AuthService {
       }
       return loginResponse;
     } catch (e) {
+      Get.back();
       Fluttertoast.showToast(msg: e.toString(), backgroundColor: Colors.red, textColor: Colors.white);
       return null;
     }
