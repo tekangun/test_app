@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/core/init/get_it_init.dart';
 import 'package:test_app/views/splash_screen.dart';
 
 void main() {
+  getItInit();
   runApp(const MyApp());
 }
 
