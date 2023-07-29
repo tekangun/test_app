@@ -4,8 +4,6 @@
 
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/tekangun/test_app/total) ![Contributors](https://img.shields.io/github/contributors/tekangun/test_app?color=dark-green) ![Issues](https://img.shields.io/github/issues/tekangun/test_app) ![License](https://img.shields.io/github/license/tekangun/test_app) 
-
 ## Table Of Contents
 
 * [About the Project](#about-the-project)
