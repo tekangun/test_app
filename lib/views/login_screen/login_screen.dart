@@ -8,7 +8,7 @@ import 'package:test_app/core/constants/media_paths.dart';
 import 'package:test_app/core/init/get_it_init.dart';
 import 'package:test_app/view_models/login_screen_view_model.dart';
 
-import 'components/text_box_with_icon.dart';
+import '../../core/widgets/text_box_with_icon.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -83,9 +83,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                                     children: [
-                                      Text(
-                                        'Forgot Password?',
-                                        style: whiteTextStyle,
+                                      InkWell(
+                                        onTap: () => viewModel.fillDemo(),
+                                        child: Text(
+                                          'Demo',
+                                          style: whiteTextStyle,
+                                        ),
                                       ),
                                       Text(
                                         'Create a new Account',

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/core/init/get_it_init.dart';
+import 'package:test_app/services/local_services/dialog_service.dart';
 import 'package:test_app/services/network_services/auth_service.dart';
-import 'package:test_app/view_models/navigation_bar_screen_view_model.dart';
+import 'package:test_app/view_models/main_sceen_view_model.dart';
 
-class NavigationBarScreen extends StatelessWidget {
-  const NavigationBarScreen({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var viewModel = Get.put(NavigationBarScreenViewModel());
+    var viewModel = Get.put(MainScreenViewModel());
 
     return Obx(
       () => Scaffold(
@@ -32,7 +33,7 @@ class NavigationBarScreen extends StatelessWidget {
         ),
         floatingActionButton: viewModel.currentScreen.value == 1
             ? FloatingActionButton(
-                onPressed: () => {},
+                onPressed: () => getIt<DialogService>().addJobDialog(),
                 child: const Icon(Icons.add),
               )
             : null,
