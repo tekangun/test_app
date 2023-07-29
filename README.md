@@ -16,8 +16,7 @@
 
 ## About The Project
 
-
-![image1](https://github.com/tekangun/test_app/assets/56742196/89ddc08c-ba58-4cec-b92d-88b1f8ae0f00)
+![image1](https://github.com/tekangun/test_app/assets/56742196/d8c3d042-1e23-4029-9bcb-8e10b9e8bbcf)
 
 
 This application includes login and user list retrieval operations with fake apis available at https://reqres.in and a simple todo list function. 
@@ -49,7 +48,8 @@ To delete an item in the todo list, you need to click on the red trash can on th
 ### Demo
 
 
-![demo](https://github.com/tekangun/test_app/assets/56742196/c603d218-a546-47fe-ba85-e3f3ef52a5d1)
+![demo](https://github.com/tekangun/test_app/assets/56742196/308c8b99-84c1-4eb6-87e2-351a2a9ebe68)
+
 
 
 
