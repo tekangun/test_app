@@ -16,7 +16,8 @@
 
 ## About The Project
 
-![Screen Shot](![image1](https://github.com/tekangun/test_app/assets/56742196/26004d67-0c1a-48ef-be7a-a282ee7bdfae))
+
+![image1](https://github.com/tekangun/test_app/assets/56742196/89ddc08c-ba58-4cec-b92d-88b1f8ae0f00)
 
 
 This application includes login and user list retrieval operations with fake apis available at https://reqres.in and a simple todo list function. 
